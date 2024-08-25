@@ -1,4 +1,5 @@
 import { InputElementT } from "@/types";
+import FormCreatorListEelementStyles from "@/components/from-creator-elements/form-creator-list-element/form-creator-list-element.module.scss";
 
 type FormCreatorListElementProps = {
   item: InputElementT;
@@ -10,7 +11,7 @@ export const FormCreatorListElement = ({
   deleteInput,
 }: FormCreatorListElementProps) => {
   return (
-    <li>
+    <li className={FormCreatorListEelementStyles.wrapper}>
       <div>
         <label htmlFor={`input-${item.id}`}>{item.label}</label>
         <input type="text" name={`input-${item.id}`} id={`input-${item.id}`} />

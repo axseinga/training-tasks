@@ -1,5 +1,6 @@
 import { InputElementT } from "@/types";
 import { FormCreatorListElement } from "../form-creator-list-element/form-creator-list-element";
+import FormCreatorInputsViewStyles from "./form-creator-inputs-view.module.scss";
 
 type FormCreatorInputsViewProps = {
   items: InputElementT[];
@@ -11,7 +12,7 @@ export const FormCreatorInputsView = ({
   deleteInput,
 }: FormCreatorInputsViewProps) => {
   return (
-    <div>
+    <div className={FormCreatorInputsViewStyles.wrapper}>
       <h2>Your form:</h2>
       {items.length > 0 ? (
         <ul>

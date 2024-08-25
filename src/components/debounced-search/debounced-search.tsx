@@ -1,4 +1,5 @@
 import React from "react";
+import DebouncedSearchSyles from "@/components/debounced-search/debounced-search.module.scss";
 
 export const DebouncedSearch = () => {
     const [data, setData] = React.useState<string[]>([]);
@@ -36,7 +37,9 @@ export const DebouncedSearch = () => {
     };
   
     return (
-      <>
+      <div className={DebouncedSearchSyles.wrapper}>
+        <h1>Debounced search with 300ms.</h1>
+        <p>Array values: "banana", "apple", "mandarine", "ananas"</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="search-input">Search</label>
           <input
@@ -57,6 +60,6 @@ export const DebouncedSearch = () => {
             ))}
           </ul>
         )}
-      </>
+      </div>
     );
   };

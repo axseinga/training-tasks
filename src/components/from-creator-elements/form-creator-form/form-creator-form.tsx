@@ -1,3 +1,5 @@
+import FormCreatorFormStyles from "@/components/from-creator-elements/form-creator-form/form-creator-form.module.scss";
+
 type FormCreatorFormProps = {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   labelInput: string;
@@ -12,7 +14,7 @@ export const FormCreatorForm = ({
   labelInputError,
 }: FormCreatorFormProps) => {
   return (
-    <div>
+    <div className={FormCreatorFormStyles.formCreatorFormWrapper}>
       <h1>Form creator</h1>
       <form onSubmit={handleSubmit}>
         <div>
