@@ -1,5 +1,5 @@
 import { TodoItemT } from "@/types";
-import "./todo-list-item.css";
+import TodoListItemStyles from "@/components/todo-app/todo-list-item/todo-list-item.module.scss";
 
 type TodoListItemProps = {
   item: TodoItemT;
@@ -7,11 +7,14 @@ type TodoListItemProps = {
   updateItem: (id: string) => void;
 };
 
-export const TodoListItem = ({ item, removeItem, updateItem }: TodoListItemProps) => {
-
+export const TodoListItem = ({
+  item,
+  removeItem,
+  updateItem,
+}: TodoListItemProps) => {
   return (
-    <li className="todo-list-item">
-      <div className={`${item.isCompleted && "completed"}`}>
+    <li className={`${TodoListItemStyles.todoListItem} ${item.isCompleted && TodoListItemStyles.completed}`}>
+      <div>
         <input
           type="checkbox"
           id={`checkbox-input-${item.id}`}

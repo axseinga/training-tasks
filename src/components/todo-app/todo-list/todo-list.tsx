@@ -1,6 +1,7 @@
 import React from "react";
 import { TodoItemT } from "@/types";
 import { TodoListItem } from "../todo-list-item/todo-list-item";
+import TodoListStyles from "./todo-list.module.scss";
 
 type TodoListProps = {
   items: TodoItemT[];
@@ -26,11 +27,15 @@ export const TodoList = ({ items, removeItem, updateItem }: TodoListProps) => {
   }, [category, items]);
 
   return (
-    <div>
-      <button onClick={() => setCategory(CategoriesEnum.ALL)}>Show all</button>
-      <button onClick={() => setCategory(CategoriesEnum.COMPLETED)}>
-        Show completed
-      </button>
+    <div className={TodoListStyles.todoListWrapper}>
+      <div className={TodoListStyles.todoListButtonsGroup}>
+        <button onClick={() => setCategory(CategoriesEnum.ALL)}>
+          Show all
+        </button>
+        <button onClick={() => setCategory(CategoriesEnum.COMPLETED)}>
+          Show completed
+        </button>
+      </div>
       {filteredTodoList.length > 0 ? (
         <ul>
           {filteredTodoList.map((item, index) => (

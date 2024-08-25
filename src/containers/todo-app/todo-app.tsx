@@ -1,9 +1,9 @@
 import React from "react";
-import "./todo-app.css";
 import { v4 as uuidv4 } from "uuid";
 import { TodoList } from "@/components/todo-app/todo-list/todo-list";
 import { TodoForm } from "@/components/todo-app/todo-form/todo-form";
 import { TodoItemT } from "@/types";
+import TodoAppStyles from "@/containers/todo-app/todo-app.module.scss";
 
 export const TodoApp = () => {
   const [todoInput, setTodoInput] = React.useState("");
@@ -52,17 +52,20 @@ export const TodoApp = () => {
   };
 
   return (
-    <div>
-      <TodoForm
-        addItem={addItem}
-        handleChange={handleChange}
-        todoInput={todoInput}
-      />
-      <TodoList
-        items={todoItems}
-        removeItem={removeItem}
-        updateItem={updateItem}
-      />
+    <div className={TodoAppStyles.pageWrapper}>
+      <h1>Todo app</h1>
+      <div className={TodoAppStyles.appWrapper}>
+        <TodoForm
+          addItem={addItem}
+          handleChange={handleChange}
+          todoInput={todoInput}
+        />
+        <TodoList
+          items={todoItems}
+          removeItem={removeItem}
+          updateItem={updateItem}
+        />
+      </div>
     </div>
   );
 };
