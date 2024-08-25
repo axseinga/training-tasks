@@ -1,19 +1,27 @@
 import { useState } from "react";
 import { Modal } from "@/components/image-gallery/modal/modal.tsx";
 import ImageGalleryStyles from "./image-gallery.module.scss";
+import Image1 from "@/assets/1.jpg";
+import Image2 from "@/assets/2.jpg";
+import Image3 from "@/assets/3.jpg";
+import Image4 from "@/assets/4.jpg";
+import Image5 from "@/assets/5.jpg";
+import Image6 from "@/assets/6.jpg";
+import Image7 from "@/assets/7.jpg";
+import Image8 from "@/assets/8.jpg";
 
 export const ImageGallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
   const images = [
-    "./src/assets/1.jpg",
-    "./src/assets/2.jpg",
-    "./src/assets/3.jpg",
-    "./src/assets/4.jpg",
-    "./src/assets/5.jpg",
-    "./src/assets/6.jpg",
-    "./src/assets/7.jpg",
-    "./src/assets/8.jpg",
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
   ];
 
   const handleNavigation = (direction: "prev" | "next") => {
